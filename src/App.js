@@ -3,9 +3,24 @@ import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client';
 import Routing from './routes/index';
 
 const client = new ApolloClient({
-    uri: 'https://api.spacex.land/graphql',
+    uri: 'https://spacex-production.up.railway.app/',
     cache: new InMemoryCache(),
 });
+
+// const client = ...
+
+// client
+//     .query({
+//         query: gql`
+//             query Rocket {
+//                 rockets(offset: 1) {
+//                     name
+//                     id
+//                 }
+//             }
+//         `,
+//     })
+//     .then(result => console.log('Something', result));
 
 const App = () => (
     <ApolloProvider client={client}>
@@ -14,4 +29,3 @@ const App = () => (
 );
 
 export default App;
-
