@@ -10,6 +10,9 @@ import SideMenu from './../SideMenu';
 // hooks
 import useNavigation from '../../hooks/useNavigation';
 
+//styles
+import './style.scss';
+
 const GET_ROCKETS_NAMES = gql`
     query Rocket {
         rockets(offset: 1) {
@@ -33,7 +36,7 @@ const NavBar = () => {
                 <TopMenu
                     isMobileView={isMobileView}
                     isMenuOpen={isMenuOpen}
-                    setIsMenuOpen={setIsMenuOpen}
+                    toggleMenu={setIsMenuOpen}
                     rockets={data.rockets}
                 />
             </div>
@@ -41,7 +44,7 @@ const NavBar = () => {
                 <SideMenu
                     isMobileView={isMobileView}
                     isMenuOpen={isMenuOpen}
-                    setIsMenuOpen={setIsMenuOpen}
+                    toggleMenu={setIsMenuOpen}
                     rockets={data.rockets}
                 />
             </div>
