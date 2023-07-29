@@ -19,12 +19,12 @@ const TechInfo = ({ name, rocket, isEngine }) => {
 
     const body = [firstRow, secondRow, thirdRow, fourthRow];
 
-    // const img = `../assets/${name.replace(/\s+/g, '').toLowerCase()}.png`;
+    const img = `../assets/${name.replace(/\s+/g, '').toLowerCase()}.png`;
 
     return {
         header,
         body,
-        // img,
+        img,
     };
 };
 
