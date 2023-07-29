@@ -41,7 +41,6 @@ const PastLaunches = () => {
 
     return (
         <Fragment>
-            {/* <h1 className="display-4 bold text-center my-4 pt-4">Past Launches</h1> */}
             <div className="custom-margin">
                 <RocketHeader id={'Past Launches'} name={'Past Launches'} />
             </div>

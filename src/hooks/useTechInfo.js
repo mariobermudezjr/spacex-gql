@@ -14,7 +14,7 @@ const TechInfo = ({ name, rocket, isEngine }) => {
     };
     const fourthRow = {
         title: isEngine ? 'THRUST TO WEIGHT' : 'COST PER LAUNCH',
-        value: isEngine ? rocket.engines.thrust_to_weight : rocket.cost_per_launch + '/$',
+        value: isEngine ? rocket.engines.thrust_to_weight : `$${rocket.cost_per_launch.toLocaleString()}.00`,
     };
 
     const body = [firstRow, secondRow, thirdRow, fourthRow];

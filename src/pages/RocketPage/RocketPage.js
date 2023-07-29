@@ -32,8 +32,6 @@ const GET_ROCKET__INFO = gql`
     }
 `;
 
-console.log('TEST');
-
 const RocketPage = ({ match }) => {
     const rocketid = match.params.id;
     const { data, loading, error } = useQuery(GET_ROCKET__INFO, {

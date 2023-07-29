@@ -14,7 +14,7 @@ const SideMenu = ({ rockets, isMenuOpen, isMobileView, toggleMenu }) => (
         <div className="d-flex flex-column">
             <div className="nav__link">
                 <Link to="/launches" onClick={() => toggleMenu(!isMenuOpen)}>
-                    PAST LAUNCHES!
+                    PAST LAUNCHES
                 </Link>
             </div>
 
