@@ -7,21 +7,6 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-// const client = ...
-
-// client
-//     .query({
-//         query: gql`
-//             query Rocket {
-//                 rockets(offset: 1) {
-//                     name
-//                     id
-//                 }
-//             }
-//         `,
-//     })
-//     .then(result => console.log('Something', result));
-
 const App = () => (
     <ApolloProvider client={client}>
         <Routing />
