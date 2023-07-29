@@ -17,6 +17,9 @@
     "react-scripts": "3.4.1",
     "sass": "^1.52.3"
   },
+  "engines": {
+    "node": "16.14.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
