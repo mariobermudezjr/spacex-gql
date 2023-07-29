@@ -1,15 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 
 // components
-import Error from './../../components/Error';
-import Loader from './../../components/Loader';
-import LaunchFeed from './../../components/LaunchesFeed';
+import Error from '../../components/Error';
+import Loader from '../../components/Loader';
+//import Rocket from './../../components/Rocket';
 
 const GET_ROCKET__INFO = gql`
-    query Rockets {
-        rocket(id: "5e9d0d95eda69973a809d1ec") {
+    query Rockets($rocketid: ID!) {
+        rocket(id: $rocketid) {
             id
+            name
             diameter {
                 feet
                 meters
@@ -31,15 +32,18 @@ const GET_ROCKET__INFO = gql`
     }
 `;
 
-const Rocket = ({ match }) => {
-    const { data, loading, error } = useQuery(GET_ROCKET__INFO);
+const RocketPage = ({ match }) => {
+    const rocketid = match.params.id;
+    const { data, loading, error } = useQuery(GET_ROCKET__INFO, {
+        variables: { rocketid },
+    });
 
     if (loading) return <Loader />;
     if (error) return <Error error={error} />;
 
-    const rocketid = match.params.id;
-    console.log({ rocketid });
-    return <Fragment></Fragment>;
+    console.log(data.rocket.name);
+
+    return null;
 };
 
-export default Rocket;
+export default RocketPage;

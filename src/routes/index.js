@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './../components/NavBar';
 import Home from './../pages/Home';
 import PastLaunches from './../pages/PastLaunches';
-import Rocket from './../pages/Rocket';
+import RocketPage from '../pages/RocketPage';
 
 const Routing = () => (
     <Router>
@@ -13,7 +13,7 @@ const Routing = () => (
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/launches" component={PastLaunches} />
-                <Route exact path="/rocket/:id" component={Rocket} />
+                <Route exact path="/rocket/:id" component={RocketPage} />
             </Switch>
         </div>
     </Router>
