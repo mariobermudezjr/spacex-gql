@@ -5,9 +5,10 @@ import { gql, useQuery } from '@apollo/client';
 import Error from './../../components/Error';
 import Loader from './../../components/Loader';
 import LaunchFeed from './../../components/LaunchesFeed';
+import RocketHeader from './../../components/RocketHeader';
 
-// style
-// import './style.scss';
+//style
+import './style.scss';
 
 const GET_PAST_LAUNCH_INFO = gql`
     query LaunchesPast {
@@ -34,15 +35,17 @@ const PastLaunches = () => {
     if (loading) return <Loader />;
     if (error) return <Error error={error} />;
 
-    console.log('Past Launches:', data);
-
     const launches = data.launchesPast.filter(
         launch => launch.links.article_link && launch.links.flickr_images.length > 0
     );
 
     return (
         <Fragment>
-            <h1 className="display-4 text-center my-5 pt-5">Past Launches!</h1>
+            {/* <h1 className="display-4 bold text-center my-4 pt-4">Past Launches</h1> */}
+            <div className="custom-margin">
+                <RocketHeader id={'Past Launches'} name={'Past Launches'} />
+            </div>
+
             <LaunchFeed launches={launches} />
         </Fragment>
     );
