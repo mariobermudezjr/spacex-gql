@@ -3,11 +3,11 @@ import React from 'react';
 import './style.scss';
 
 const Loader = () => (
-    <div className="loader__container d-flex justify-content-center align-items-center">
+    <div className="loader__container d-flex justify-content-center align-items-center custom-background">
         <p>
-            <span role="img" aria-label="rocket" className="mr-4">
+            {/* <span role="img" aria-label="rocket" className="mr-4">
                 🚀
-            </span>
+            </span> */}
             It's Loading
         </p>
         <div className="loader__dots--animation">
